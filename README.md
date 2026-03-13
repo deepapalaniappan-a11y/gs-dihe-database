@@ -93,7 +93,7 @@ We welcome contributions from disability practitioners, researchers, and advocat
 
 ## Related Resources
 
-- **GS-DIHE Portal** — [gs-dihe-portal repository](https://github.com/[username]/gs-dihe-portal) — The public-facing knowledge portal and resource library
+- **GS-DIHE Portal** — [gs-dihe-portal repository](https://github.com/[deepapalaniappan-a11y]/gs-dihe-portal) — The public-facing knowledge portal and resource library
 - **GS-DIHE Knowledge Repository** — 12 practical topic modules for disability practitioners (hosted on the portal)
 - **AHEAD 2026** — Research from this database will be presented at the AHEAD conference in November 2026
 
@@ -105,7 +105,7 @@ See [docs/methodology.md](docs/methodology.md) for the full research methodology
 
 If you use this dataset in your work, please cite:
 
-> GS-DIHE Collective. (2026). *Global South Disability Inclusion in Higher Education Database*. https://github.com/[username]/gs-dihe-database
+> GS-DIHE Collective. (2026). *Global South Disability Inclusion in Higher Education Database*. https://github.com/[deepapalaniappan-a11y]/gs-dihe-database
 
 ## Contact
 
