@@ -15,18 +15,20 @@ jobs:
       github.actor != 'github-actions[bot]' &&
       (
         (github.event_name == 'issue_comment' &&
-         contains(github.event.comment.body, '@claude')) ||
+          contains(github.event.comment.body, '@claude')) ||
         (github.event_name == 'pull_request_review_comment' &&
-         contains(github.event.comment.body, '@claude')) ||
+          contains(github.event.comment.body, '@claude')) ||
         (github.event_name == 'issues' &&
-         (contains(github.event.issue.body, '@claude') ||
-          contains(github.event.issue.labels.*.name, 'claude')))
+          (contains(github.event.issue.body, '@claude') ||
+            contains(github.event.issue.labels.*.name, 'claude')))
       )
     runs-on: ubuntu-latest
     permissions:
       contents: write
       pull-requests: write
       issues: write
+      id-token: write
+      actions: read
     timeout-minutes: 20
     steps:
       - name: Checkout repository
@@ -45,10 +47,9 @@ jobs:
       - name: Run Claude Code
         uses: anthropics/claude-code-action@v1
         with:
+          anthropic_api_key: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           use_commit_signing: true
           claude_args: |
             --model claude-sonnet-4-20250514
             --max-turns 25
             --allowedTools "Bash(python *),Bash(pip install *),Bash(git *),Bash(ls *),Bash(cat *),Bash(find *),Bash(grep *),Bash(head *),Bash(tail *),Bash(wc *),Bash(mkdir *),Bash(cp *),Bash(mv *),Read,Edit,Write,MultiEdit"
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
